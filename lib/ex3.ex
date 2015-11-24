@@ -1,7 +1,8 @@
-defmodule Euler do
-  def ex3(n) do
+defmodule Euler.Ex3 do
+  def solution(n \\ 600851475143) do
     Enum.filter(primes(Float.ceil(:math.sqrt(n))), fn x -> rem(n, x) == 0 end)
-    |> List.last
+    |> Enum.reverse
+    |> hd
   end
 
   def primes(n) do
@@ -18,5 +19,3 @@ defmodule Euler do
     []
   end
 end
-
-IO.puts Euler.ex3(600851475143)
